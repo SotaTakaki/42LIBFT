@@ -6,13 +6,13 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 21:42:49 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/11 14:01:57 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/12 13:28:36 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_bzero(void *s,size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*cast_s;
 	int		i;

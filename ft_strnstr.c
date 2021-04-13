@@ -6,18 +6,20 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 17:16:49 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/09 17:53:05 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/12 01:57:53 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(const char *str, const char *to_find, int len)
+#include "libft.h"
+
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	if (to_find[i] == '\0')
-		return (str);
+		return ((char *)str);
 	while (str[i] != '\0')
 	{
 		j = 0;
@@ -25,7 +27,7 @@ char	*ft_strnstr(const char *str, const char *to_find, int len)
 		{
 			j++;
 			if (to_find[j] == '\0')
-				return (&str[i]);
+				return ((char *)&str[i]);
 		}
 		i++;
 	}

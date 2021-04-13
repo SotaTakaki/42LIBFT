@@ -6,11 +6,11 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 00:01:08 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/12 00:53:20 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/12 01:46:23 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

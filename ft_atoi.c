@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 13:04:26 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/09 10:01:33 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/12 13:46:12 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(char *str)
 	minus = 1;
 	answer = 0;
 	while ((str[i] == ' ') || (str[i] == '\t') || (str[i] == '\n')
-			|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'))
+		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'))
 		i++;
 	if ((str[i] == '+') || (str[i] == '-'))
 	{

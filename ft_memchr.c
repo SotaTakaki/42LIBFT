@@ -6,15 +6,15 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 23:41:49 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/11 23:55:49 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/12 13:49:57 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*cast_s;
+	unsigned char		*cast_s;
 	unsigned char		cast_c;
 	size_t				i;
 
@@ -31,6 +31,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 				return (&cast_s[i]);
 			i++;
 		}
-	return (0);
 	}
+	return (0);
 }

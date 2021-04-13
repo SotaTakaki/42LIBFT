@@ -6,11 +6,11 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 14:37:00 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/11 15:35:09 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/12 13:37:18 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
