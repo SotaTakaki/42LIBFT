@@ -6,7 +6,7 @@
 #    By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/09 01:35:42 by stakaki           #+#    #+#              #
-#    Updated: 2021/04/12 23:39:09 by stakaki          ###   ########.fr        #
+#    Updated: 2021/04/18 02:47:41 by stakaki          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,15 @@ SRCS = 	ft_memset.c\
 		ft_calloc.c\
 		ft_strdup.c\
 		ft_substr.c\
+		ft_strjoin.c\
+		ft_strtrim.c\
+		ft_split.c\
+		ft_itoa.c\
+		ft_strmapi.c\
+		ft_putchar_fd.c\
+		ft_putstr_fd.c\
+		ft_putendl_fd.c\
+		ft_putnbr_fd.c\
 
 OBJCS = $(SRCS:.c=.o)
 
