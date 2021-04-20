@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/11 14:37:00 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/20 14:27:00 by stakaki          ###   ########.fr       */
+/*   Created: 2021/04/19 22:49:40 by stakaki           #+#    #+#             */
+/*   Updated: 2021/04/19 23:29:26 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	char		*cast_dst;
-	const char	*cast_src;
-	int			i;
+	t_list	*new;
 
-	cast_dst = (char *)dst;
-	cast_src = (const char *)src;
-	if (cast_dst == cast_src || n == 0)
-		return (dst);
-	i = 0;
-	while (i < n)
-	{
-		cast_dst[i] = cast_src[i];
-		i++;
-	}
-	return (dst);
+	new = (t_list *)malloc(sizeof(t_list));
+	if (new == NULL)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

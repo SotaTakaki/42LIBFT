@@ -6,15 +6,17 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 13:04:26 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/12 13:46:12 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/20 15:00:51 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
+
 int	ft_atoi(char *str)
 {
-	int	i;
-	int	minus;
-	int	answer;
+	int				i;
+	int				minus;
+	long	answer;
 
 	i = 0;
 	minus = 1;
@@ -34,5 +36,10 @@ int	ft_atoi(char *str)
 		answer += str[i] - '0';
 		i++;
 	}
-	return (answer * minus);
+	if (answer * minus > LONG_MAX)
+		return (-1);
+	else if (answer * minus < LONG_MIN)
+		return (0);
+	else
+		return (answer * minus);
 }
