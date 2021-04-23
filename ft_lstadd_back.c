@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 00:50:14 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/20 01:06:20 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/23 22:32:46 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	while (*lst != NULL)
 	{
-		lst = &((*lst) -> next);
+		lst = &((*lst)->next);
 	}
 	*lst = new;
 }

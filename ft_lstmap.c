@@ -6,13 +6,13 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 13:49:13 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/20 23:17:51 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/23 22:35:27 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*f_content;
 	t_list	*first_new;

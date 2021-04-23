@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 14:53:13 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/12 13:35:24 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/23 17:10:37 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src,
 	unsigned char			*cast_dst;
 	const unsigned char		*cast_src;
 	unsigned char			cast_c;
-	int						i;
+	size_t					i;
 
 	cast_dst = (unsigned char *)dst;
 	cast_src = (const unsigned char *)src;

@@ -6,12 +6,12 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:12:59 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/17 16:50:10 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/23 22:30:21 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int	ft_count_digits(int n);
+int		ft_count_digits(int n);
 char	*ft_malloc(int n);
 
 char	*ft_itoa(int n)

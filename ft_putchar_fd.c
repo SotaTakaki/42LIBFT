@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:02:36 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/16 14:19:50 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/23 22:58:49 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	fd = write(fd, &c, 1);
+	write(fd, &c, 1);
 }

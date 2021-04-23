@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 22:33:14 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/20 22:40:11 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/24 03:02:59 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 int		ft_count_split(char const *s, char c);
 char	**ft_malloc_new_s(char const *s, char c);
 char	**ft_get_split(char const *s, char c);
-char	*ft_make_split(char const *s, int i, int j);
+char	*ft_make_split(char const *s, int start, int end);
 
 char	**ft_split(char const *s, char c)
 {
+	int		i;
 	char	**new_s;
 
+	i = 0;
 	if (s == NULL)
 		return (NULL);
 	new_s = ft_malloc_new_s(s, c);
@@ -28,10 +30,20 @@ char	**ft_split(char const *s, char c)
 		return (new_s);
 	free(new_s);
 	new_s = ft_get_split(s, c);
+	if (new_s == NULL)
+	{
+		while (new_s[i])
+		{
+			free(new_s[i]);
+			i++;
+		}
+		free(new_s);
+		new_s = NULL;
+		return (new_s);
+	}
 	return (new_s);
 }
 
-//\0\0 is skip && if x\0 count flag.
 int	ft_count_split(char const *s, char c)
 {
 	int		i;
@@ -48,14 +60,13 @@ int	ft_count_split(char const *s, char c)
 	return (split_flag);
 }
 
-//malloc range of words.
 char	**ft_malloc_new_s(char const *s, char c)
 {
 	int		count_split;
 	char	**new_s;
 
 	count_split = ft_count_split(s, c);
-	new_s = (char **)malloc(count_split * sizeof(char) + 1);
+	new_s = (char **)malloc(sizeof(char *) * (count_split + 1));
 	if (new_s == NULL)
 		return (NULL);
 	new_s[count_split] = NULL;
@@ -68,7 +79,6 @@ char	**ft_get_split(char const *s, char c)
 	int		end;
 	int		i;
 	char	**new_s;
-	char	*split;
 
 	start = 0;
 	end = 0;
@@ -78,16 +88,12 @@ char	**ft_get_split(char const *s, char c)
 	{
 		if (s[end] == c)
 			start++;
-		if ((s[end] != c && s[end + 1] == c) || (s[end] != c && s[end + 1] == '\0'))
+		if ((s[end] != c && s[end + 1] == c)
+			|| (s[end] != c && s[end + 1] == '\0'))
 		{
-			split = ft_make_split(s, start, end);
-			new_s[i] = split;
-			if (split == NULL)
-			{
-				free(new_s[i]);
-				new_s[i] = NULL;
-				return (new_s);
-			}
+			new_s[i] = ft_make_split(s, start, end);
+			if (new_s[i] == NULL)
+				return (NULL);
 			i++;
 			start = end + 1;
 		}
@@ -103,7 +109,7 @@ char	*ft_make_split(char const *s, int start, int end)
 	char	*split;
 
 	malloc_len = (end - start) + 1;
-	split = (char *)malloc(malloc_len * sizeof(char) + 1);
+	split = (char *)malloc(sizeof(char) * (malloc_len + 1));
 	if (split == NULL)
 		return (NULL);
 	i = 0;

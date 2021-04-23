@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 01:14:09 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/12 13:44:23 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/23 22:44:18 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ unsigned int	ft_strlcpy(char *dest, char *src, size_t size)
 {
 	size_t	i;
 
+	if (src == NULL)
+		return (0);
 	i = 0;
 	if (size != 0)
 	{

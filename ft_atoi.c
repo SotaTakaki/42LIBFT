@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 13:04:26 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/20 15:00:51 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/22 01:31:06 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(char *str)
 {
-	int				i;
-	int				minus;
-	long	answer;
+	int		i;
+	int		minus;
+	int		answer;
 
 	i = 0;
 	minus = 1;
@@ -36,10 +36,5 @@ int	ft_atoi(char *str)
 		answer += str[i] - '0';
 		i++;
 	}
-	if (answer * minus > LONG_MAX)
-		return (-1);
-	else if (answer * minus < LONG_MIN)
-		return (0);
-	else
-		return (answer * minus);
+	return (answer * minus);
 }

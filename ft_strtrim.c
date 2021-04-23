@@ -6,37 +6,30 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 14:25:52 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/13 18:03:31 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/24 02:36:25 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int	ft_index_headset(char const *s1, char const *set);
-int	ft_index_endset(char const *s1, char const *set);
+int		ft_index_headset(char const *s1, char const *set);
+int		ft_index_endset(char const *s1, char const *set);
+char	*ft_nullbox2(char *box);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		index_headset;
 	int		index_endset;
-	int		len_s1;
 	int		capture_range;
 	char	*box;
 
 	i = 0;
 	index_headset = ft_index_headset(s1, set);
 	index_endset = ft_index_endset(s1, set);
-	len_s1 = ft_strlen(s1);
-	capture_range = len_s1 - index_headset - (len_s1 - (index_endset + 1));
+	capture_range = index_endset - index_headset;
 	if (index_headset == -1)
-	{
-		box = (char *)malloc(1 * sizeof(char));
-		if (box == NULL)
-			return (NULL);
-		box[0] = '\0';
-		return (box);
-	}
-	box = (char *)malloc(capture_range * sizeof(char) + 1);
+		return (ft_nullbox2(box));
+	box = (char *)malloc(sizeof(char) * (capture_range + 1));
 	if (box == NULL)
 		return (NULL);
 	while (0 < capture_range)
@@ -92,8 +85,17 @@ int	ft_index_endset(char const *s1, char const *set)
 			j++;
 		}
 		if (j == stop_flag)
-			return (len_s1 - 1);
+			return (len_s1);
 		len_s1--;
 	}
 	return (-1);
+}
+
+char	*ft_nullbox2(char *box)
+{
+	box = (char *)malloc(sizeof(char) * 1);
+	if (box == NULL)
+		return (NULL);
+	box[0] = '\0';
+	return (box);
 }

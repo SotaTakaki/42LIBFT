@@ -6,50 +6,61 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 14:14:01 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/13 14:20:02 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/24 02:45:24 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+char	*ft_strnull(char const *s1, char const *s2);
+char	*ft_strdog(char const *s1, char const *s2, char *box);
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
-	int		len_s1;
-	int		len_s2;
+	int		j;
 	int		len_total;
 	char	*box;
 
 	i = 0;
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	len_total = len_s1 + len_s2;
+	len_total = ft_strlen(s1) + ft_strlen(s2);
 	if (s1 == NULL || s2 == NULL)
+		return (ft_strnull(s1, s2));
+	box = (char *)malloc(len_total * sizeof(char) + 1);
+	if (box == NULL)
+		return (NULL);
+	box = ft_strdog(s1, s2, box);
+	return (box);
+}
+
+char	*ft_strnull(char const *s1, char const *s2)
+{
+	char	*box;
+
+	box = (char *)malloc(1 * sizeof(char));
+	if (box == NULL)
+		return (NULL);
+	box[0] = '\0';
+	return (box);
+}
+
+char	*ft_strdog(char const *s1, char const *s2, char *box)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (s1[i])
 	{
-		box = (char *)malloc(1 * sizeof(char));
-		if (box == NULL)
-			return (NULL);
-		box[0] = '\0';
-		return (box);
+		box[i] = s1[i];
+		i++;
 	}
-	else
+	j = 0;
+	while (s2[j])
 	{
-		box = (char *)malloc(len_total * sizeof(char) + 1);
-		if (box == NULL)
-			return (NULL);
-		while (i < len_s1)
-		{
-			box[i] = s1[i];
-			i++;
-		}
-		i = 0;
-		while (i < len_s2)
-		{
-			box[len_s1] = s2[i];
-			i++;
-			len_s1++;
-		}
-		box[len_s1] = '\0';
-		return (box);
+		box[i] = s2[j];
+		i++;
+		j++;
 	}
+	box[i] = '\0';
+	return (box);
 }

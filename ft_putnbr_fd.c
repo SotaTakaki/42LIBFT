@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 23:07:24 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/18 01:31:15 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/23 23:06:13 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ void	ft_putnbr_fd(int n, int fd)
 	long		ln;
 	int			digits;
 	int			dev;
-	char		c;
 
 	ln = n;
-	digits = ft_count_digits(n);
+	digits = ft_count_digits2(n);
 	dev = 1;
 	while (digits > 0)
 	{
@@ -31,18 +30,15 @@ void	ft_putnbr_fd(int n, int fd)
 	if (ln < 0)
 	{
 		ln *= -1;
-		c = '-';
-		write(fd, &c ,1);
+		ft_putchar_fd('-', fd);
 	}
 	while (ln >= 10)
 	{
-		c = (ln / digits) + '0';
-		write(fd, &c, 1);
+		ft_putchar_fd((ln / digits) + '0', fd);
 		ln %= digits;
 		digits /= 10;
 	}
-	c = ln + '0';
-	write(fd, &c, 1);
+	ft_putchar_fd(ln + '0', fd);
 }
 
 int	ft_count_digits2(int n)
@@ -55,9 +51,7 @@ int	ft_count_digits2(int n)
 	if (n == 0)
 		return (1);
 	if (n_dev < 0)
-	{
-		n_dev *=  -1;
-	}
+		n_dev *= -1;
 	while (n_dev > 0)
 	{
 		n_dev /= 10;

@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 00:26:14 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/12 13:39:43 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/22 10:11:54 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	char			*cast_b;
 	char			cast_c;
-	int				i;
+	size_t			i;
 
 	cast_b = (char *)b;
 	cast_c = (unsigned char)c;

@@ -6,16 +6,17 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 01:11:59 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/09 17:14:50 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/22 10:33:31 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *s)
 {
-	int	n;
+	size_t	n;
 
 	n = 0;
-	while (str[n] != '\0')
+	while (s[n] != '\0')
 	{
 		n++;
 	}
