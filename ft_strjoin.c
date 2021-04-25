@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 14:14:01 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/24 16:40:55 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/25 23:34:07 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		len_total;
 	char	*box;
 
+	if (s1 == NULL || s2 == NULL)
+		return (ft_strnull(box));
 	i = 0;
 	len_total = ft_strlen(s1) + ft_strlen(s2);
-	if (s1 == NULL && s2 == NULL)
-		return (ft_strnull(box));
 	box = (char *)malloc(len_total * sizeof(char) + 1);
 	if (box == NULL)
 		return (NULL);

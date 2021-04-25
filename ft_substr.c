@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 23:30:18 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/24 16:18:04 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/25 23:11:02 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t				capture_range;
 	char				*box;
 
-	len_s = ft_strlen(s);
-	capture_range = len_s - start + 1;
 	if (s == NULL)
 		return (NULL);
-	else if (len_s <= start)
+	len_s = ft_strlen(s);
+	capture_range = len_s - start + 1;
+	if (len_s <= start)
 		return (ft_nullbox(box));
 	else
 	{

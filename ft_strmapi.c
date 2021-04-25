@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 01:31:56 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/18 02:52:41 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/25 23:09:06 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		len_s;
 	char	*range;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	len_s = ft_strlen(s);
 	range = (char *)malloc(len_s * sizeof(char) + 1);

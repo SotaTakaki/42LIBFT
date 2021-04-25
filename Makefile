@@ -6,7 +6,7 @@
 #    By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/09 01:35:42 by stakaki           #+#    #+#              #
-#    Updated: 2021/04/20 19:19:33 by stakaki          ###   ########.fr        #
+#    Updated: 2021/04/25 22:54:40 by stakaki          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,17 +46,20 @@ SRCS = 	ft_memset.c\
 		ft_putstr_fd.c\
 		ft_putendl_fd.c\
 		ft_putnbr_fd.c\
-		ft_lstnew.c\
-		ft_lstadd_front.c\
-		ft_lstsize.c\
-		ft_lstlast.c\
-		ft_lstadd_back.c\
-		ft_lstdelone.c\
-		ft_lstclear.c\
-		ft_lstiter.c\
-		ft_lstmap.c\
+
+BONUS_SRCS =ft_lstnew.c\
+			ft_lstadd_front.c\
+			ft_lstsize.c\
+			ft_lstlast.c\
+			ft_lstadd_back.c\
+			ft_lstdelone.c\
+			ft_lstclear.c\
+			ft_lstiter.c\
+			ft_lstmap.c\
 
 OBJCS = $(SRCS:.c=.o)
+
+BONUS_OBJCS = $(BONUS_SRCS:.c=.o)
 
 INCLUDE = libft.h
 
@@ -72,12 +75,15 @@ $(NAME): $(OBJCS)
 
 all: $(NAME)
 
+bonus: $(OBJCS) $(BONUS_OBJCS)
+	ar rc $(NAME) $(OBJCS) $(BONUS_OBJCS)
+
 clean:
-	rm -f $(OBJCS)
+	rm -f $(OBJCS) $(BONUS_OBJCS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: re clean fclean all
+.PHONY: all bonus clean fclean re

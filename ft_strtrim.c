@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 14:25:52 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/24 02:36:25 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/25 23:27:28 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 int		ft_index_headset(char const *s1, char const *set);
 int		ft_index_endset(char const *s1, char const *set);
 char	*ft_nullbox2(char *box);
+char	*ft_tobox(char *box, char const *s1,
+			int capture_range, int index_headset);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -23,6 +25,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		capture_range;
 	char	*box;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	i = 0;
 	index_headset = ft_index_headset(s1, set);
 	index_endset = ft_index_endset(s1, set);
@@ -32,15 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	box = (char *)malloc(sizeof(char) * (capture_range + 1));
 	if (box == NULL)
 		return (NULL);
-	while (0 < capture_range)
-	{
-		box[i] = s1[index_headset];
-		i++;
-		index_headset++;
-		capture_range--;
-	}
-	box[i] = '\0';
-	return (box);
+	return (ft_tobox(box, s1, capture_range, index_headset));
 }
 
 int	ft_index_headset(char const *s1, char const *set)
@@ -97,5 +93,22 @@ char	*ft_nullbox2(char *box)
 	if (box == NULL)
 		return (NULL);
 	box[0] = '\0';
+	return (box);
+}
+
+char	*ft_tobox(char *box, char const *s1,
+			int capture_range, int index_headset)
+{
+	int	i;
+
+	i = 0;
+	while (0 < capture_range)
+	{
+		box[i] = s1[index_headset];
+		i++;
+		index_headset++;
+		capture_range--;
+	}
+	box[i] = '\0';
 	return (box);
 }
