@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 23:30:18 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/24 00:17:16 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/24 16:18:04 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_rangebox(char const *s, unsigned int start, size_t capture_range);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		len_s;
-	size_t	capture_range;
-	char	*box;
+	unsigned int		len_s;
+	size_t				capture_range;
+	char				*box;
 
 	len_s = ft_strlen(s);
 	capture_range = len_s - start + 1;
