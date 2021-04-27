@@ -6,12 +6,12 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 23:07:24 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/23 23:06:13 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/27 01:07:49 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int	ft_count_digits2(int n);
+int	ft_count_digits2(long ln);
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -20,7 +20,7 @@ void	ft_putnbr_fd(int n, int fd)
 	int			dev;
 
 	ln = n;
-	digits = ft_count_digits2(n);
+	digits = ft_count_digits2(ln);
 	dev = 1;
 	while (digits > 0)
 	{
@@ -32,29 +32,26 @@ void	ft_putnbr_fd(int n, int fd)
 		ln *= -1;
 		ft_putchar_fd('-', fd);
 	}
-	while (ln >= 10)
+	while (dev > 0)
 	{
-		ft_putchar_fd((ln / digits) + '0', fd);
-		ln %= digits;
-		digits /= 10;
+		ft_putchar_fd((ln / dev) + '0', fd);
+		ln %= dev;
+		dev /= 10;
 	}
-	ft_putchar_fd(ln + '0', fd);
 }
 
-int	ft_count_digits2(int n)
+int	ft_count_digits2(long ln)
 {
-	long	n_dev;
 	int		digits;
 
-	n_dev = n;
 	digits = 0;
-	if (n == 0)
-		return (1);
-	if (n_dev < 0)
-		n_dev *= -1;
-	while (n_dev > 0)
+	if (ln < 0)
+		ln *= -1;
+	if (ln < 10)
+		return (0);
+	while (ln > 9)
 	{
-		n_dev /= 10;
+		ln /= 10;
 		digits++;
 	}
 	return (digits);

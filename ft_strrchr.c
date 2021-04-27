@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 16:45:36 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/12 13:44:49 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/27 00:10:52 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ char	*ft_strrchr(const char *str, int chr)
 			return ((char *)&str[i]);
 		i--;
 	}
-	return (0);
+	return (NULL);
 }

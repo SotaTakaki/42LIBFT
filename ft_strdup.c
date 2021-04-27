@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/09 01:22:51 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/12 13:42:31 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/26 22:51:57 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(char *src)
 	char	*box;
 	int		i;
 
-	box = malloc(sizeof(char) * ft_strlen(src) + 1);
+	box = malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (box == NULL)
 		return (0);
 	i = 0;

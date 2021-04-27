@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 22:33:14 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/24 03:02:59 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/27 00:17:49 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	new_s = ft_malloc_new_s(s, c);
 	if (new_s == NULL)
-		return (new_s);
+		return (NULL);
 	free(new_s);
 	new_s = ft_get_split(s, c);
 	if (new_s == NULL)

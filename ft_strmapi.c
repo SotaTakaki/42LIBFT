@@ -6,7 +6,7 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 01:31:56 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/25 23:09:06 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/27 00:04:58 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	int		len_s;
-	char	*range;
+	unsigned int	i;
+	size_t			len_s;
+	char			*range;
 
 	if (s == NULL)
 		return (NULL);

@@ -6,14 +6,13 @@
 /*   By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 14:25:52 by stakaki           #+#    #+#             */
-/*   Updated: 2021/04/25 23:27:28 by stakaki          ###   ########.fr       */
+/*   Updated: 2021/04/26 23:05:41 by stakaki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 int		ft_index_headset(char const *s1, char const *set);
 int		ft_index_endset(char const *s1, char const *set);
-char	*ft_nullbox2(char *box);
 char	*ft_tobox(char *box, char const *s1,
 			int capture_range, int index_headset);
 
@@ -32,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	index_endset = ft_index_endset(s1, set);
 	capture_range = index_endset - index_headset;
 	if (index_headset == -1)
-		return (ft_nullbox2(box));
+		return (ft_strdup(""));
 	box = (char *)malloc(sizeof(char) * (capture_range + 1));
 	if (box == NULL)
 		return (NULL);
@@ -85,15 +84,6 @@ int	ft_index_endset(char const *s1, char const *set)
 		len_s1--;
 	}
 	return (-1);
-}
-
-char	*ft_nullbox2(char *box)
-{
-	box = (char *)malloc(sizeof(char) * 1);
-	if (box == NULL)
-		return (NULL);
-	box[0] = '\0';
-	return (box);
 }
 
 char	*ft_tobox(char *box, char const *s1,

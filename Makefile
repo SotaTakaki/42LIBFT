@@ -6,7 +6,7 @@
 #    By: stakaki <stakaki@student.42tokyo.j>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/09 01:35:42 by stakaki           #+#    #+#              #
-#    Updated: 2021/04/25 22:54:40 by stakaki          ###   ########.fr        #
+#    Updated: 2021/04/26 23:49:50 by stakaki          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,15 +65,15 @@ INCLUDE = libft.h
 
 CC = gcc
 
-CFLAG = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
+
+all: $(NAME)
 
 .c.o:
-	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
+	$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $@
 
 $(NAME): $(OBJCS)
 	ar rc $(NAME) $(OBJCS)
-
-all: $(NAME)
 
 bonus: $(OBJCS) $(BONUS_OBJCS)
 	ar rc $(NAME) $(OBJCS) $(BONUS_OBJCS)
